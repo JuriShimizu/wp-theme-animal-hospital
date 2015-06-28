@@ -24,6 +24,7 @@
 					the_title( '<header class="entry-header"><h1 class="page-title">', '</h1></header>' );
 				}
 			?>
+			<p class="catchphrase"><?php echo get_post(get_page_by_path('misc'))->catchphrase; ?></p>
 			<div class="entry-content">
 				<?php the_content(); ?>
 				<?php
