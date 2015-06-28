@@ -1,68 +1,10 @@
 /*
-Theme Name: Edin
-Theme URI: https://wordpress.com/themes/edin/
-Author: Automattic
-Author URI: https://wordpress.com/themes/
-Description: Edin is a modern responsive business and corporate theme that helps you to create a strong--yet beautiful--online presence for your business.
-Version: 1.2.1
-License: GNU General Public License
-License URI: license.txt
-Text Domain: edin
-Domain Path: /languages/
-Tags: blue, gray, white, light, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-Edin is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
-
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
+Theme Name: animal-hospital
+Author: JuriShimizu
+Description: animal hospital theme
+Version: 1.0.0
 */
 
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-1.0 - Reset
-2.0 - Typography
-3.0 - Elements
-4.0 - Forms
-5.0 - Navigation
-	5.1 - Links
-	5.2 - Pagination
-	5.3 - Menu Toggle
-	5.4 - Primary Navigation
-	5.5 - Secondary Navigation
-	5.6 - Footer Navigation
-	5.7 - Social Navigation
-6.0 - Accessibility
-7.0 - Alignments
-8.0 - Clearings
-9.0 - Layout
-10.0 - Widgets
-11.0 - Content
-12.0 - Comments
-13.0 - Media
-	13.1 - Images
-	13.2 - Galleries
-	13.3 - Iframes
-14.0 - Jetpack
-	14.1 - Contact Form
-	14.2 - Galleries
-	14.3 - Infinite Scroll
-	14.4 - Sharedaddy
-	14.5 - Responsive Videos
-	14.6 - Widgets
-	14.7 - Testimonials
-15.0 - Eventbrite
-16.0 - Responsive
-	16.1 - x >= 600px
-	16.2 - x >= 768px
-	16.3 - x >= 1020px
-	16.4 - x >= 1230px
---------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 1.0 - Reset
@@ -1295,7 +1237,6 @@ ul[id^="menu-social"] a[href*="youtube.com"]:before {
 .featured-page-wrapper,
 .footer-widget-wrapper,
 .footer-wrapper,
-.front-page-testimonials-wrapper,
 .front-page-widget-wrapper,
 .grid-wrapper,
 .has-custom-background #page,
@@ -1303,10 +1244,9 @@ ul[id^="menu-social"] a[href*="youtube.com"]:before {
 .hero-wrapper,
 .hero .hentry,
 .menu-primary,
-.no-sidebar-full .content-area,
-.post-type-archive-jetpack-testimonial .nav-links,
 .search-wrapper .search-form,
-.secondary-navigation {
+.secondary-navigation,
+.no-sidebar-full .content-area {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -1320,11 +1260,9 @@ ul[id^="menu-social"] a[href*="youtube.com"]:before {
 .footer-widget,
 .footer-widget-wrapper,
 .footer-wrapper,
-.front-page-testimonials-wrapper,
-.front-page-testimonials-wrapper .hentry.jetpack-testimonial,
 .front-page-widget,
 .front-page-widget-wrapper,
-.grid,
+.grid
 .grid-wrapper,
 .has-custom-background #page,
 .has-footer-navigation .site-info,
@@ -1332,7 +1270,6 @@ ul[id^="menu-social"] a[href*="youtube.com"]:before {
 .hero-wrapper,
 .hero .hentry,
 .menu-primary,
-.post-type-archive-jetpack-testimonial .nav-links,
 .search-wrapper .search-form,
 .secondary-navigation,
 .site-branding
@@ -1344,14 +1281,12 @@ ul[id^="menu-social"] a[href*="youtube.com"]:before {
 .featured-page-wrapper,
 .footer-widget-wrapper,
 .footer-wrapper,
-.front-page-testimonials-wrapper,
 .front-page-widget-wrapper,
 .grid-wrapper,
 .header-wrapper,
 .hero-wrapper,
 .hero .hentry,
 .menu-primary,
-.post-type-archive-jetpack-testimonial .nav-links,
 .search-wrapper .search-form,
 .secondary-navigation {
 	padding-right: 24px;
@@ -1360,7 +1295,6 @@ ul[id^="menu-social"] a[href*="youtube.com"]:before {
 .content-area,
 .featured-page-area,
 .footer-widget-area,
-.front-page-testimonials-area,
 .front-page-widget-area,
 .grid-area,
 .widget-area {
@@ -1869,7 +1803,7 @@ ul[id^="menu-social"] a[href*="youtube.com"]:before {
 .no-results {
 	margin: 0;
 }
-.archive:not(.post-type-archive-jetpack-testimonial) .hentry,
+.archive .hentry,
 .blog .hentry,
 .search .hentry {
 	padding-top: 24px;
@@ -1914,9 +1848,9 @@ ul[id^="menu-social"] a[href*="youtube.com"]:before {
 	display: block;
 	margin-bottom: 24px;
 }
-a.post-thumbnail:hover,
-a.post-thumbnail:focus,
-a.post-thumbnail:active {
+.post-thumbnail:hover,
+.post-thumbnail:focus,
+.post-thumbnail:active {
 	opacity: 0.7;
 }
 .post-thumbnail img {
@@ -2612,103 +2546,6 @@ div#jp-relatedposts {
 }
 
 /*--------------------------------------------------------------
-14.7 Testimonials
---------------------------------------------------------------*/
-.front-page-widget-area + .front-page-testimonials-area {
-	background: #f8f8f8;
-}
-.hentry.jetpack-testimonial {
-	padding-bottom: 12px;
-}
-.front-page-testimonials-area .hentry.jetpack-testimonial {
-	padding-bottom: 0;
-}
-.jetpack-testimonial-shortcode .testimonial-featured-image,
-.hentry.jetpack-testimonial .post-thumbnail {
-	display: block;
-	position: relative;
-	margin: 0 auto 12px;
-	border: 0 !important;
-	text-align: center;
-}
-.jetpack-testimonial-shortcode .testimonial-featured-image:before,
-.hentry.jetpack-testimonial .post-thumbnail:before {
-	display: block;
-	content: '';
-	position: absolute;
-	top: 50%;
-	background: #c5c5c5;
-	height: 1px;
-	width: 100%;
-}
-.jetpack-testimonial-shortcode .testimonial-featured-image img,
-.hentry.jetpack-testimonial .post-thumbnail img {
-	background: #fff;
-	border-right: 12px solid #fff;
-	border-left: 12px solid #fff;
-	width: 48px;
-	height: 48px;
-	position: relative;
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing:    content-box;
-	box-sizing:         content-box;
-}
-.front-page-widget-area + .front-page-testimonials-area .hentry.jetpack-testimonial .post-thumbnail img,
-.content-wrapper + .grid-area .hentry.jetpack-testimonial .post-thumbnail img {
-	background: #f8f8f8;
-	border-color: #f8f8f8;
-}
-.jetpack-testimonial-shortcode .testimonial-entry-content,
-.hentry.jetpack-testimonial .entry-content {
-	margin: 0 auto 12px;
-}
-.hentry.jetpack-testimonial .entry-content * {
-	margin-bottom: 0;
-}
-.hentry.jetpack-testimonial br,
-.hentry.jetpack-testimonial #jp-post-flair,
-.hentry.jetpack-testimonial .pd-rating {
-	display: none !important;
-}
-.hentry.jetpack-testimonial .entry-meta {
-	padding-bottom: 12px;
-}
-.post-type-archive-jetpack-testimonial .paging-navigation {
-	padding: 24px 0;
-	margin: 0;
-	overflow: hidden;
-	border-top: 1px solid #f8f8f8;
-}
-.front-page-testimonials-area .entry-title,
-.jetpack-testimonial-shortcode .testimonial-entry-title,
-.single-jetpack-testimonial .entry-title,
-.type-jetpack-testimonial .entry-title {
-	margin: 0 auto 12px;
-	text-transform: uppercase;
-	font-size: 1em;
-	font-weight: bold;
-	line-height: 1.5em;
-}
-.front-page-testimonials-area .entry-title:before,
-.post-type-archive-jetpack-testimonial .entry-title:before,
-.single-jetpack-testimonial .entry-title:before {
-	content: '\2015';
-	margin-right: 0.25em;
-}
-.jetpack-testimonial-shortcode .testimonial-entry {
-	margin-bottom: 12px;
-}
-.testimonial-entry-title a {
-	color: inherit;
-	border-bottom: 0 !important;
-}
-.testimonial-entry-title a:hover,
-.testimonial-entry-title a:focus,
-.testimonial-entry-title a:active {
-  color: #1279be;
-}
-
-/*--------------------------------------------------------------
 15.0 Eventbrite
 --------------------------------------------------------------*/
 .eventbrite-event .entry-header span {
@@ -2792,7 +2629,6 @@ div#jp-relatedposts {
 	.featured-page-wrapper,
 	.footer-widget-wrapper,
 	.footer-wrapper,
-	.front-page-testimonials-wrapper,
 	.front-page-widget-wrapper,
 	.grid-wrapper,
 	.header-wrapper,
@@ -2800,7 +2636,6 @@ div#jp-relatedposts {
 	.hero .hentry,
 	.menu-primary,
 	.no-sidebar-full .content-area,
-	.post-type-archive-jetpack-testimonial .nav-links,
 	.search-wrapper .search-form,
 	.secondary-navigation {
 		width: 540px;
@@ -2809,15 +2644,14 @@ div#jp-relatedposts {
 	}
 	.site-branding {
 		float: left;
-		width: 464px;
+		width: 480px;
 	}
 	.has-header-search .site-branding {
-		width: 388px;
+		width: 374px;
 	}
 	.content-area,
 	.featured-page-area,
 	.footer-widget-area,
-	.front-page-testimonials-area,
 	.front-page-widget-area,
 	.grid-area,
 	.widget-area {
@@ -2927,7 +2761,7 @@ div#jp-relatedposts {
 	.no-results {
 		margin-bottom: 6px;
 	}
-	.archive:not(.post-type-archive-jetpack-testimonial) .hentry,
+	.archive .hentry,
 	.blog .hentry,
 	.search .hentry {
 		padding-top: 30px;
@@ -2987,7 +2821,6 @@ div#jp-relatedposts {
 	.featured-page-wrapper,
 	.footer-widget-wrapper,
 	.footer-wrapper,
-	.front-page-testimonials-wrapper,
 	.front-page-widget-wrapper,
 	.grid-wrapper,
 	.header-wrapper,
@@ -2995,7 +2828,6 @@ div#jp-relatedposts {
 	.hero .hentry,
 	.menu-primary,
 	.no-sidebar-full .content-area,
-	.post-type-archive-jetpack-testimonial .nav-links,
 	.search-wrapper .search-form,
 	.secondary-navigation {
 		width: 648px;
@@ -3014,7 +2846,6 @@ div#jp-relatedposts {
 	.content-area,
 	.featured-page-area,
 	.footer-widget-area,
-	.front-page-testimonials-area,
 	.front-page-widget-area,
 	.grid-area,
 	.widget-area {
@@ -3025,7 +2856,6 @@ div#jp-relatedposts {
 		padding-bottom: 24px;
 	}
 	.featured-page-area,
-	.front-page-testimonials-area,
 	.front-page-widget-area,
 	.footer-widget-area,
 	.grid-area,
@@ -3062,7 +2892,7 @@ div#jp-relatedposts {
 	.no-results {
 		margin-bottom: 36px;
 	}
-	.archive:not(.post-type-archive-jetpack-testimonial) .hentry,
+	.archive .hentry,
 	.blog .hentry,
 	.search .hentry {
 		padding-top: 60px;
@@ -3361,7 +3191,6 @@ div#jp-relatedposts {
 	.featured-page-wrapper,
 	.footer-widget-wrapper,
 	.footer-wrapper,
-	.front-page-testimonials-wrapper,
 	.front-page-widget-wrapper,
 	.grid-wrapper,
 	.header-wrapper,
@@ -3370,7 +3199,6 @@ div#jp-relatedposts {
 	.menu-primary,
 	.navigation-classic .menu-secondary,
 	.no-sidebar-full .content-area,
-	.post-type-archive-jetpack-testimonial .nav-links,
 	.search-wrapper .search-form,
 	.secondary-navigation {
 		width: 900px;
@@ -3396,7 +3224,6 @@ div#jp-relatedposts {
 		width: 420px;
 	}
 	.featured-page,
-	.front-page-testimonials-wrapper .hentry.jetpack-testimonial,
 	.front-page-widget,
 	.footer-widget,
 	.grid {
@@ -3404,18 +3231,13 @@ div#jp-relatedposts {
 		margin-right: 60px;
 		width: 260px;
 	}
-	.front-page-testimonials-wrapper .hentry.jetpack-testimonial {
-		width: 420px;
-	}
 	.featured-page:nth-of-type(3n+3),
-	.front-page-testimonials-wrapper .hentry.jetpack-testimonial:nth-of-type(2n+2),
 	.front-page-widget:nth-of-type(3n+3),
 	.footer-widget:nth-of-type(3n+3),
 	.grid:nth-of-type(3n+3) {
 		margin-right: 0;
 	}
 	.featured-page:nth-of-type(3n+1),
-	.front-page-testimonials-wrapper .hentry.jetpack-testimonial:nth-of-type(2n+1),
 	.front-page-widget:nth-of-type(3n+1),
 	.footer-widget:nth-of-type(3n+1),
 	.grid:nth-of-type(3n+1) {
@@ -3573,7 +3395,6 @@ div#jp-relatedposts {
 	.featured-page-wrapper,
 	.footer-widget-wrapper,
 	.footer-wrapper,
-	.front-page-testimonials-wrapper,
 	.front-page-widget-wrapper,
 	.grid-wrapper,
 	.header-wrapper,
@@ -3586,8 +3407,7 @@ div#jp-relatedposts {
 	.hero .hentry,
 	.navigation-classic .menu-primary,
 	.navigation-classic .menu-secondary,
-	.no-sidebar-full .content-area,
-	.post-type-archive-jetpack-testimonial .nav-links {
+	.no-sidebar-full .content-area {
 		width: 930px;
 	}
 	.content-area {
@@ -3627,9 +3447,6 @@ div#jp-relatedposts {
 		margin-right: 60px;
 		width: 330px;
 	}
-	.front-page-testimonials-wrapper .hentry.jetpack-testimonial {
-		width: 525px;
-	}
 	body[class*="alternate-sidebar"].sidebar-left .content-area,
 	.sidebar-right .content-area {
 		margin-right: 0;
@@ -3660,3 +3477,152 @@ div#jp-relatedposts {
 		padding: 180px 0;
 	}
 }
+
+
+/*--------------------------------------------------------------
+17.0 Customize
+--------------------------------------------------------------*/
+body {
+  font-family: "PT Sans", Helvetica, "Meiryo", Arial, sans-serif;
+}
+
+a {
+  transition-duration: .3s;
+  color: #333;
+}
+
+a:hover {
+  color: #1279be;
+  text-shadow: 0 0 10px #fff, 0 0 10px #fff;
+}
+
+body:not(.no-image-filter) .hero.with-featured-image:before {
+  background: none;
+  opacity: 1;
+}
+
+.noize {
+  background-image: url(images/bg_mask.png);
+  background-color: rgba(0, 0, 0, .4);
+  padding: 50px 30px;
+}
+
+.site-branding,
+.site-branding p {
+  max-width: inherit;
+}
+
+.entry-title-grid {
+  display: block;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  outline: 5px solid #ddd;
+}
+
+.entry-title-grid:hover,
+.entry-title-grid:focus {
+  outline: 5px solid #1279be;
+}
+
+.entry-title-grid:hover .entry-title-main,
+.entry-title-grid:hover .entry-title-sub,
+.entry-title-grid:focus .entry-title-main,
+.entry-title-grid:focus .entry-title-sub {
+  font-weight: 900;
+  color: #1279be;
+}
+
+.entry-title-grid:hover .entry-title-main,
+.entry-title-grid:focus .entry-title-main {
+  border-bottom: 1px solid #1279be;
+}
+
+.entry-title-grid .entry-title-main,
+.entry-title-grid .entry-title-sub {
+  letter-spacing: 5px;
+  font-size: 1.5em;
+  color: #fff;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.entry-title-grid .entry-title-main {
+  border-bottom: 1px solid #fff;
+}
+
+.hero.hero-front {
+  font-size: 1.5em;
+}
+
+.hero.hero-single {
+  padding: 0;
+}
+
+.hero-inner {
+  padding: 50px 30px;
+}
+
+.hero-single .entry-title-main,
+.hero-single .entry-title-sub {
+  letter-spacing: 5px;
+  font-size: 2em;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.hero-single .entry-title-main {
+  border-bottom: 1px solid #fff;
+}
+
+.notice {
+  padding: 20px 30px;
+  max-width: 1230px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.notice-inner {
+  padding: 10px;
+}
+
+.notice-inner h6 {
+  margin: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .hero-inner {
+    padding: 30px 50px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero-inner {
+    padding: 60px 70px;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .hero.with-featured-image,
+  body[class*="front-page"] {
+    padding: 0;
+  }
+
+  .hero-inner {
+    padding: 120px 120px;
+  }
+}
+
+@media screen and (min-width: 1230px) {
+  .hero.with-featured-image,
+  body[class*="front-page"] {
+    padding: 0;
+  }
+
+  .hero-inner {
+    padding: 180px 150px;
+  }
+}
+

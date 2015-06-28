@@ -2,24 +2,25 @@
 /**
  * The template used for displaying featured page content in page-templates/front-page.php
  *
- * @package Edin
+ * @package wp-theme-animal-hospital
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php edin_post_thumbnail(); ?>
 
-	<?php the_title( sprintf( '<header class="entry-header"><h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1></header>' ); ?>
+<?php
+$featured_image = wp_get_attachment_image_src(
+	get_post_thumbnail_id(get_the_ID()),
+	'post-thumbnail');
+?>
 
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-		<p><a class="more-link" href="<?php the_permalink(); ?>" rel="bookmark">
-			<?php
-				/* translators: %s: Name of page. Visible to screen readers only. */
-				printf( __( 'Read more %s', 'edin' ), the_title( '<span class="screen-reader-text">', '</span>', false ) );
-			?>
-		</a></p>
-	</div><!-- .entry-summary -->
+	<a href="<?php esc_url(the_permalink()); ?>" class="entry-title entry-title-grid" style="background-image: url(<?php echo $featured_image[0]; ?>);">
+		<div class="noize">
+			<h2 class="entry-title-main"><?php the_title('', ''); ?></h2>
+			<div class="entry-title-sub"><?php the_field("subtitle", $post->ID) ?></div>
+		</div>
+	</a>
 
-	<?php edit_post_link( __( 'Edit', 'edin' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+<?php edit_post_link( __( 'Edit', 'edin' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+
 </article><!-- #post-## -->

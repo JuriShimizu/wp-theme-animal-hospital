@@ -2,32 +2,21 @@
 /**
  * The template used for displaying hero content in page.php and page-templates.
  *
- * @package Edin
+ * @package wp-theme-animal-hospital
  */
 ?>
 
-<div class="hero <?php echo edin_additional_class(); ?>">
-	<?php if ( is_post_type_archive( 'jetpack-testimonial' ) ) : ?>
+<?php if ( ! is_page_template( 'page-templates/front-page.php' ) ) : ?>
+<div class="hero hero-single <?php echo edin_additional_class(); ?>">
+	<div class="hero-inner noize">
 
-		<div class="hero-wrapper">
-			<h1 class="page-title">
-				<?php
-					$jetpack_options = get_theme_mod( 'jetpack_testimonials' );
+		<h2 class="entry-title-main"><?php the_title('', ''); ?></h2>
+		<div class="entry-title-sub"><?php the_field("subtitle", $post->ID) ?></div>
 
-					if ( '' != $jetpack_options['page-title'] ) {
-						echo esc_html( $jetpack_options['page-title'] );
-					} else {
-						_e( 'Testimonials', 'edin' );
-					}
-				?>
-			</h1>
-		</div>
-
-	<?php elseif ( ! is_page_template( 'page-templates/front-page.php' ) ) : ?>
-
-		<?php the_title( '<div class="hero-wrapper"><h1 class="page-title">', '</h1></div>' ); ?>
-
-	<?php else : ?>
+	</div>
+</div>
+<?php else : ?>
+<div class="hero hero-front <?php echo edin_additional_class(); ?>">
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php
@@ -49,8 +38,15 @@
 			<?php edit_post_link( __( 'Edit', 'edin' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
 		</article><!-- #post-## -->
 
-	<?php endif; ?>
+	</div>
 </div><!-- .hero -->
+<div class="notice">
+	<div class="notice-inner">
+    <h6><?php echo get_post(get_page_by_path('notice'))->post_title; ?></h6>
+		<?php echo get_post(get_page_by_path('notice'))->post_content; ?>
+	</div>
+</div>
+<?php endif; ?>
 
 <?php
 	if ( ! function_exists( 'jetpack_breadcrumbs' ) || 0 == get_theme_mod( 'edin_breadcrumbs' ) || ! is_page() || is_page_template( 'page-templates/front-page.php' ) || is_front_page() ) {
