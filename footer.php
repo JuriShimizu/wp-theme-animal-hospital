@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package Edin
+ * @package wp-theme-animal-hospital
  */
 ?>
 
@@ -14,11 +14,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="footer-wrapper clear">
-			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'edin' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'edin' ), 'WordPress' ); ?></a>
-				<span class="sep"> | </span>
-				<?php printf( __( 'Theme: %1$s by %2$s.', 'edin' ), 'Edin', '<a href="http://wordpress.com/themes/" rel="designer">WordPress.com</a>' ); ?>
-			</div><!-- .site-info -->
+			<div class="site-info">&copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?></div>
 			<?php if ( has_nav_menu( 'footer' ) ) : ?>
 				<nav class="footer-navigation" role="navigation">
 					<?php
