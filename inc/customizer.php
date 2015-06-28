@@ -156,6 +156,79 @@ function edin_customize_register( $wp_customize ) {
 		'type'              => 'dropdown-pages',
 	) );
 
+	/* Front Page: Featured Page Four */
+	$wp_customize->add_setting( 'edin_featured_page_four_front_page', array(
+		'default'           => '',
+		'sanitize_callback' => 'edin_sanitize_dropdown_pages',
+	) );
+	$wp_customize->add_control( 'edin_featured_page_four_front_page', array(
+		'label'             => __( 'Front Page: Featured Page Four', 'edin' ),
+		'section'           => 'edin_theme_options',
+		'priority'          => 11,
+		'type'              => 'dropdown-pages',
+	) );
+
+	/* Front Page: Featured Page Five */
+	$wp_customize->add_setting( 'edin_featured_page_five_front_page', array(
+		'default'           => '',
+		'sanitize_callback' => 'edin_sanitize_dropdown_pages',
+	) );
+	$wp_customize->add_control( 'edin_featured_page_five_front_page', array(
+		'label'             => __( 'Front Page: Featured Page Five', 'edin' ),
+		'section'           => 'edin_theme_options',
+		'priority'          => 12,
+		'type'              => 'dropdown-pages',
+	) );
+
+	/* Front Page: Featured Page Six */
+	$wp_customize->add_setting( 'edin_featured_page_six_front_page', array(
+		'default'           => '',
+		'sanitize_callback' => 'edin_sanitize_dropdown_pages',
+	) );
+	$wp_customize->add_control( 'edin_featured_page_six_front_page', array(
+		'label'             => __( 'Front Page: Featured Page Six', 'edin' ),
+		'section'           => 'edin_theme_options',
+		'priority'          => 13,
+		'type'              => 'dropdown-pages',
+	) );
+
+	/* Front Page: Featured Page Seven */
+	$wp_customize->add_setting( 'edin_featured_page_seven_front_page', array(
+		'default'           => '',
+		'sanitize_callback' => 'edin_sanitize_dropdown_pages',
+	) );
+	$wp_customize->add_control( 'edin_featured_page_seven_front_page', array(
+		'label'             => __( 'Front Page: Featured Page Seven', 'edin' ),
+		'section'           => 'edin_theme_options',
+		'priority'          => 14,
+		'type'              => 'dropdown-pages',
+	) );
+
+	/* Front Page: Featured Page Eight */
+	$wp_customize->add_setting( 'edin_featured_page_eight_front_page', array(
+		'default'           => '',
+		'sanitize_callback' => 'edin_sanitize_dropdown_pages',
+	) );
+	$wp_customize->add_control( 'edin_featured_page_eight_front_page', array(
+		'label'             => __( 'Front Page: Featured Page Eight', 'edin' ),
+		'section'           => 'edin_theme_options',
+		'priority'          => 15,
+		'type'              => 'dropdown-pages',
+	) );
+
+	/* Front Page: Featured Page Nine */
+	$wp_customize->add_setting( 'edin_featured_page_nine_front_page', array(
+		'default'           => '',
+		'sanitize_callback' => 'edin_sanitize_dropdown_pages',
+	) );
+	$wp_customize->add_control( 'edin_featured_page_nine_front_page', array(
+		'label'             => __( 'Front Page: Featured Page Nine', 'edin' ),
+		'section'           => 'edin_theme_options',
+		'priority'          => 16,
+		'type'              => 'dropdown-pages',
+	) );
+
+
 	/* Jetpack Testimonial */
 	$wp_customize->add_setting( 'edin_testimonials', array(
 		'default'           => '',
