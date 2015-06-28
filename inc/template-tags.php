@@ -262,8 +262,17 @@ function edin_featured_pages() {
 	$featured_page_1 = esc_attr( get_theme_mod( 'edin_featured_page_one_front_page', '0' ) );
 	$featured_page_2 = esc_attr( get_theme_mod( 'edin_featured_page_two_front_page', '0' ) );
 	$featured_page_3 = esc_attr( get_theme_mod( 'edin_featured_page_three_front_page', '0' ) );
+	$featured_page_4 = esc_attr( get_theme_mod( 'edin_featured_page_four_front_page', '0' ) );
+	$featured_page_5 = esc_attr( get_theme_mod( 'edin_featured_page_five_front_page', '0' ) );
+	$featured_page_6 = esc_attr( get_theme_mod( 'edin_featured_page_six_front_page', '0' ) );
+	$featured_page_7 = esc_attr( get_theme_mod( 'edin_featured_page_seven_front_page', '0' ) );
+	$featured_page_8 = esc_attr( get_theme_mod( 'edin_featured_page_eight_front_page', '0' ) );
+	$featured_page_9 = esc_attr( get_theme_mod( 'edin_featured_page_nine_front_page', '0' ) );
 
-	if ( 0 == $featured_page_1 && 0 == $featured_page_2 && 0 == $featured_page_3 ) {
+
+	if ( 0 == $featured_page_1 && 0 == $featured_page_2 && 0 == $featured_page_3 
+		&& 0 == $featured_page_4 && 0 == $featured_page_5 && 0 == $featured_page_6 
+		&& 0 == $featured_page_7 && 0 == $featured_page_8 && 0 == $featured_page_9 ) {
 		return;
 	}
 ?>
@@ -271,7 +280,7 @@ function edin_featured_pages() {
 	<div id="quaternary" class="featured-page-area">
 		<div class="featured-page-wrapper clear">
 
-			<?php for ( $page_number = 1; $page_number <= 3; $page_number++ ) : ?>
+			<?php for ( $page_number = 1; $page_number <= 9; $page_number++ ) : ?>
 				<?php if ( 0 != ${'featured_page_' . $page_number} ) : // Check if a featured page has been set in the customizer ?>
 					<div class="featured-page">
 
