@@ -23,12 +23,6 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'edin' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<?php if ( get_header_image() ) : ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-image" rel="home">
-			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-		</a><!-- .header-image -->
-		<?php endif; // End header image check. ?>
-
 		<?php
 			$search_header = get_theme_mod( 'edin_search_header' );
 			if ( 1 == $search_header ) :
@@ -46,7 +40,12 @@
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php else : ?>
 						<p class="header-address"><?php echo get_post(get_page_by_path('misc'))->address; ?></p>
-						<p class="site-title"> <?php bloginfo( 'name' ); ?></p>
+						<?php if ( get_header_image() ) : ?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-image" rel="home">
+							<img src="<?php header_image(); ?>" alt="">
+						</a><!-- .header-image -->
+						<?php endif; // End header image check. ?>
+						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 						<p class="header-telephone"><?php echo get_post(get_page_by_path('misc'))->telephone; ?></p>
 					<?php endif;
 
