@@ -3601,6 +3601,11 @@ body:not(.no-image-filter) .hero.with-featured-image:before {
 	margin-bottom: 15px;
 }
 
+.catchphrase {
+	font-size: 1.5em;
+	padding-right: 12px;
+}
+
 @media screen and (min-width: 600px) {
   .hero-inner {
     padding: 30px 50px;
