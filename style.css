@@ -3575,9 +3575,8 @@ body:not(.no-image-filter) .hero.with-featured-image:before {
 
 .notice {
   padding: 20px 30px;
-  max-width: 1230px;
+  max-width: 600px;
   margin: 0 auto;
-  text-align: center;
 }
 
 .notice-inner {
@@ -3586,6 +3585,7 @@ body:not(.no-image-filter) .hero.with-featured-image:before {
 
 .notice-inner h6 {
   margin: 0;
+  text-align: center;
 }
 
 .header-telephone {
