@@ -1361,12 +1361,13 @@ ul[id^="menu-social"] a[href*="youtube.com"]:before {
 	color: inherit;
 }
 .header-image {
-	display: block;
+	display: inline-block;
+	padding-right: 10px;
 }
 .header-image img {
 	display: block;
 	margin: 0 auto;
-	width: 100%;
+	width: 2.25em;
 }
 .header-navigation,
 .header-search {
@@ -3597,7 +3598,7 @@ body:not(.no-image-filter) .hero.with-featured-image:before {
 	font-size: 1.5em;
 	margin-left: 20px;
 	margin-top: 20px;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 }
 
 @media screen and (min-width: 600px) {
